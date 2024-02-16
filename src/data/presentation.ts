@@ -11,22 +11,18 @@ type Presentation = {
 };
 
 const presentation: Presentation = {
-  mail: "gxanshu@yahoo.com",
-  title: "Hi, I’m Anshu 👋",
+  mail: "guilhermejcgois@gmail.com",
+  title: "Hi, I’m Guilherme 👋",
   description:
-    "Howdy, i'm a *indian software programmer* with over *5 years* of web experience. I am currently working with *NextJS and Typescript*. Outside of work I complete my pokemon card collection and learning TypeScript.",
+    'I\'m a fullstack developer skilled on front end development, passionate about designing and developing amazing products that deliver real value for real people. "Man should not live by code alone", agile and lean process enthusiast and continually improving leadership skills.',
   socials: [
     {
-      label: "Twiiter",
-      link: "https://twitter.com/gxanshu",
-    },
-    {
-      label: "Bento",
-      link: "https://bento.me/gxanshu",
+      label: "LinkedIn",
+      link: "https://www.linkedin.com/in/guilhermejcgois",
     },
     {
       label: "Github",
-      link: "https://github.com/gxanshu",
+      link: "https://github.com/guilhermejcgois",
     },
   ],
 };
