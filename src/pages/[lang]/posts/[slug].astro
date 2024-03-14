@@ -1,21 +1,25 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { getLangFromUrl, getPosts } from "@/i18n/utils";
 import Layout from "@/layouts/Layout.astro";
 import formatDate from "@/utils/formatDate";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("posts");
+  const lang = getLangFromUrl(Astro.url);
+  const posts = getPosts(await getCollection("posts"), lang);
 
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: { post },
-  }));
+  return posts.map((post) => {
+    const [lang] = post.id.split("/");
+    return { params: { lang, slug: post.slug || undefined }, props: { post } };
+  });
 }
 
 type Props = {
   post: CollectionEntry<"posts">;
 };
 
+const { lang } = Astro.params;
 const { post } = Astro.props;
 const { Content } = await post.render();
 ---
@@ -24,7 +28,7 @@ const { Content } = await post.render();
   <main class="post mx-auto flex w-full max-w-prose flex-col gap-4">
     <header role="presentation">
       <h1 class="text-md">
-        {post.data.title} - {formatDate(post.data.publishedAt)}
+        {post.data.title} - {formatDate(post.data.publishedAt, lang)}
       </h1>
       <p class="italic">{post.data.description}</p>
     </header>

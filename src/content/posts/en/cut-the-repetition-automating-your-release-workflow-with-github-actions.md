@@ -3,7 +3,7 @@ title: "Cut the Repetition: Automating Your Release Workflow with GitHub Actions
 description: Streamline release workflows with GitHub Actions. Automate and test
   pipelines, cutting manual work each sprint.
 publishedAt: 2024-02-16T03:21:00.145Z
-slug: the-power-of-react-hooks
+slug: cut-the-repetition-automating-your-release-workflow-with-github-actions
 isPublish: true
 isDraft: false
 ---
